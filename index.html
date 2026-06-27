@@ -1,0 +1,3203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+<title>Ahad Khan Portfolio</title>
+
+<style>
+:root {
+  --hero-8k-ratio: 7680 / 4320;
+  --page-max: 1450px;
+  --radius: 14px;
+  --section-gap: 180px;
+}
+
+
+
+.about-profile-circle {
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+}
+
+.about-profile-circle img {
+  width: 200%;
+  height: 200%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-contact a {
+  font-size: 25px !important;
+  line-height: 1.3 !important;
+}
+
+.about-icon {
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(130, 58, 255, 0.38), transparent 28%),
+    radial-gradient(circle at 85% 25%, rgba(88, 28, 135, 0.35), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.22), transparent 35%),
+    linear-gradient(135deg, #020008 0%, #090216 28%, #16072f 55%, #05000f 100%);
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.55) 100%);
+  z-index: 0;
+}
+
+.portfolio {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 80px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  width: 100%;
+  margin-bottom: var(--section-gap);
+  clear: both;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+  background: #222;
+  cursor: zoom-in;
+}
+
+/* INTRO PORTFOLIO ANIMATION - before About Me */
+.intro-animation-section {
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+.intro-animation-box {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(130, 58, 255, 0.34), transparent 32%),
+    radial-gradient(circle at 82% 78%, rgba(188, 18, 121, 0.32), transparent 34%),
+    radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.12), transparent 42%),
+    linear-gradient(135deg, #020008 0%, #090216 28%, #16072f 58%, #05000f 100%);
+}
+
+.intro-animation-box::before,
+.intro-animation-box::after {
+  right: 14%;
+  bottom: 18%;
+  background: rgba(188, 18, 121, 0.28);
+  animation-delay: 1.2s;
+}
+
+.intro-animation-box::before {
+  left: 16%;
+  top: 16%;
+  background: rgba(130, 58, 255, 0.28);
+}
+
+.intro-animation-box::after {
+  right: 18%;
+  bottom: 20%;
+  background: rgba(255, 53, 123, 0.18);
+  animation-delay: 1.2s;
+}
+
+.intro-mini-pills {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+
+.intro-mini-pills span {
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.intro-splash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-splash span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(2px);
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: splashMove 10s infinite cubic-bezier(.2,.7,.2,1);
+}
+
+.intro-splash span:nth-child(1) {
+  background: #005dff;
+  animation-delay: 0.2s;
+  --x: -190px;
+  --y: -60px;
+}
+
+.intro-splash span:nth-child(2) {
+  background: #ff3030;
+  animation-delay: 0.45s;
+  --x: 165px;
+  --y: 20px;
+}
+
+.intro-splash span:nth-child(3) {
+  background: #ffad00;
+  animation-delay: 0.7s;
+  --x: 90px;
+  --y: -115px;
+}
+
+.intro-splash span:nth-child(4) {
+  background: #6b32ff;
+  animation-delay: 0.95s;
+  --x: -75px;
+  --y: 110px;
+}
+
+.intro-splash span:nth-child(5) {
+  background: #00a56a;
+  animation-delay: 1.15s;
+  --x: 210px;
+  --y: -75px;
+}
+
+.intro-splash span:nth-child(6) {
+  background: #ff4fa3;
+  animation-delay: 1.35s;
+  --x: -220px;
+  --y: 90px;
+}
+
+.intro-logo-wrap {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transform: translateY(0);
+  animation: logoFloat 10s infinite ease-in-out;
+}
+
+.intro-word {
+  display: flex;
+  justify-content: center;
+  gap: 0.01em;
+  font-size: clamp(58px, 10vw, 132px);
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  color: #005dff;
+}
+
+.intro-word span {
+  display: inline-block;
+  color: #ffffff;
+  text-shadow: 0 16px 46px rgba(168, 85, 247, 0.42);
+  animation: letterColor 10s infinite ease-in-out;
+}
+
+.intro-word span:nth-child(1) { animation-delay: 0s; }
+.intro-word span:nth-child(2) { animation-delay: 0.08s; }
+.intro-word span:nth-child(3) { animation-delay: 0.16s; }
+.intro-word span:nth-child(4) { animation-delay: 0.24s; }
+.intro-word span:nth-child(5) { animation-delay: 0.32s; }
+.intro-word span:nth-child(6) { animation-delay: 0.40s; }
+.intro-word span:nth-child(7) { animation-delay: 0.48s; }
+.intro-word span:nth-child(8) { animation-delay: 0.56s; }
+.intro-word span:nth-child(9) { animation-delay: 0.64s; }
+
+.intro-subtitle {
+  margin-top: 18px;
+  font-size: clamp(12px, 1.3vw, 16px);
+  color: rgba(255,255,255,0.88);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: subtitleFade 10s infinite ease-in-out;
+}
+
+@keyframes letterColor {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.86);
+    filter: blur(12px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  16% { color: var(--c); }
+  30% { color: #ffffff; }
+  48% {
+    color: #ffffff;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  56% {
+    color: var(--c);
+    filter: blur(5px);
+    transform: translateY(-10px) scale(1.06);
+  }
+  68% {
+    color: #ffffff;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+@keyframes subtitleFade {
+  0%, 14% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  22%, 48% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  58% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  74%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashMove {
+  0%, 48% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+  56% {
+    opacity: 0.95;
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+  }
+  68%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+
+@keyframes introGlow {
+  0%, 42%, 78%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  55%, 65% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  55% {
+    transform: translateY(-4px);
+  }
+}
+
+
+
+
+/* 10 TEXT MARQUEE ANIMATION — only text, no boxes */
+.slot-animation-section {
+  width: 100%;
+  margin-top: -70px;
+  margin-bottom: 55px; /* reduced gap before About Me */
+  overflow: hidden;
+}
+
+.slot-marquee {
+  position: relative;
+  width: 100%;
+  padding: 18px 0;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+}
+
+.slot-marquee::before,
+.slot-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 130px;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.slot-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #090216, transparent);
+}
+
+.slot-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #090216, transparent);
+}
+
+.slot-track {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: slotScroll 28s linear infinite;
+}
+
+.slot-marquee:hover .slot-track {
+  animation-play-state: paused;
+}
+
+.animated-text-slot {
+  flex: 0 0 auto;
+  color: #ffffff;
+  font-size: 26px; /* h3 size */
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: 0 10px 32px rgba(168, 85, 247, 0.34);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.animated-text-slot:nth-child(3n + 1) {
+  color: #ffffff;
+}
+
+.animated-text-slot:nth-child(3n + 2) {
+  color: rgba(255,255,255,0.72);
+}
+
+.animated-text-slot:nth-child(3n + 3) {
+  color: rgba(168, 85, 247, 0.95);
+}
+
+
+.animated-text-slot:hover {
+  color: #b26bff;
+  text-shadow: 0 12px 38px rgba(178, 107, 255, 0.55);
+}
+
+@keyframes slotScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 30px));
+  }
+}
+
+
+
+#about-me,
+#brand-identity,
+#social-media,
+#product-ads,
+#fashion-design,
+#real-estate,
+#travel-campaign,
+#movie-artwork,
+#flyers-design {
+  scroll-margin-top: 70px;
+}
+
+/* ABOUT ME SECTION */
+.about-section {
+  width: 100%;
+  margin-bottom: 180px;
+}
+
+.about-card {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 40% 55%;
+  gap: 5%;
+  padding: 48px 50px;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.about-card::before {
+  display: none;
+}
+
+.about-left,
+.about-right {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-kicker {
+  color: rgba(255,255,255,0.58);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.about-name {
+  color: #fff;
+  font-size: 62px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.about-title {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+
+.about-kicker,
+.about-name,
+.about-title {
+  margin-left: 10px;
+}
+
+
+.about-profile-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  height: 360px;
+  margin-top: 78px;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+}
+
+.about-profile-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.18), transparent 52%),
+    linear-gradient(0deg, rgba(0,0,0,0.42), transparent 60%);
+  pointer-events: none;
+}
+
+.about-profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
+  background: transparent;
+}
+
+.about-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 75px;
+  row-gap: 28px;
+  align-content: start;
+  padding-top: 0;
+}
+
+.about-intro {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.36;
+  opacity: 0.95;
+  overflow-wrap: break-word;
+}
+
+.about-block h3 {
+  color: rgba(255,255,255,0.58);
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.about-intro {
+  font-size: 20px !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+}
+
+.about-block li {
+  font-size: 19px !important;
+  line-height: 1.65 !important;
+}
+
+
+.about-block ul {
+  list-style: none;
+}
+
+.about-block li,
+.about-block p,
+.about-contact a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.78;
+  text-decoration: none;
+  opacity: 0.96;
+  overflow-wrap: break-word;
+}
+
+.about-contact li {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.about-icon {
+  width: 18px;
+  flex: 0 0 18px;
+  display: inline-flex;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.about-qr-box {
+  width: 126px;
+  height: 126px;
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(90deg, #111 0 6px, #fff 6px 12px),
+    repeating-linear-gradient(0deg, #111 0 6px, #fff 6px 12px);
+  border: 1px solid rgba(255,255,255,0.24);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.about-qr-box span {
+  background: #111;
+  padding: 8px 10px;
+  border-radius: 7px;
+}
+
+/* BRAND IDENTITY SECTION */
+.brand-wrap {
+  display: block;
+}
+
+.brand-content {
+  width: 900px;
+  flex-shrink: 0;
+}
+
+.brand-cover-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 90px;
+  position: relative;
+}
+
+.brand-cover {
+  width: 2000px;
+  aspect-ratio: var(--hero-8k-ratio);
+  border-radius: var(--radius);
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-top-with-text {
+  position: relative;
+  display: block;
+  margin-bottom: 35px;
+}
+
+.brand-top-row {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 35px; /* added left gap before top 3 slots */
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.brand-cover-text {
+  position: absolute;
+  left: 850px; /* text moved slightly right */
+  top: 90px;
+  width: 420px;
+  color: white;
+  margin-top: 0;
+  flex-shrink: 0;
+  transform: none;
+  z-index: 5;
+}
+
+.brand-cover-text h2 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.brand-cover-text p {
+  font-size: 24px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.brand-img1,
+.brand-img2,
+.brand-img3 {
+  width: 283px;
+  height: 283px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.brand-wide {
+  width: 900px;
+  aspect-ratio: var(--hero-8k-ratio);
+  margin-left: 35px; /* added left gap before Brand 4 and Brand 5 */
+  margin-bottom: 45px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.tomfort-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px; /* reduced gap before image slots */
+  margin-left: 45px;
+  justify-content: flex-start;
+  width: calc(100% - 45px);
+}
+
+.tomfort-text {
+  width: 330px;
+  color: white;
+  margin-top: 70px;
+  flex-shrink: 0;
+}
+
+.tomfort-text h2 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.tomfort-text p {
+  font-size: 24px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.tomfort-content {
+  width: 760px;
+  flex-shrink: 0;
+  transform: translateX(-20px); /* image slots slightly closer to text */
+}
+
+.brand-right-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.brand-small {
+  width: calc((100% - 40px) / 3);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.brand-banner {
+  width: 100%;
+  aspect-ratio: var(--hero-8k-ratio);
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* SECTION TEXT */
+.image-text-row {  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.text-box {
+  width: 360px;
+  color: white;
+  margin-top: -120px;
+  margin-left: 150px;
+}
+
+.text-box h2 {
+  font-size: 45px;
+  margin-bottom: 18px;
+}
+
+.text-box p {
+  font-size: 39px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.section2-wrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.section2-text {
+  width: 350px;
+  color: white;
+  flex-shrink: 0;
+  margin-left: 45px; /* text moved slightly right */
+}
+
+.section2-text h2 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section2-text p {
+  font-size: 24px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.section3-wrap,
+.section4-wrap,
+.section5-wrap,
+.section6-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.section3-text,
+.section4-text,
+.section5-text,
+.section6-text {
+  color: white;
+  flex-shrink: 0;
+}
+
+.section3-text {
+  width: 420px;
+  margin-top: 80px;
+}
+
+.section4-text {
+  width: 380px;
+  margin-top: 120px;
+}
+
+.section5-text {
+  width: 420px;
+  margin-top: 40px;
+  margin-left: -120px;
+}
+
+.section6-text {
+  width: 380px;
+  margin-top: 10px;
+  margin-left: 200px;
+}
+
+.section3-text h2,
+.section4-text h2,
+.section5-text h2,
+.section6-text h2 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section3-text p,
+.section4-text p,
+.section5-text p,
+.section6-text p {
+  font-size: 24px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.center,
+.left,
+.right {
+  width: 100%;
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* HERO SLOTS */
+.hero-wrap {
+  justify-content: center;
+  padding-left: 0;
+  margin-bottom: 70px;
+}
+
+.hero,
+.last-hero {
+  width: 2000px;
+  aspect-ratio: var(--hero-8k-ratio);
+}
+
+/* GRID */
+.square-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 24px;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+}
+
+.big-square-grid {
+  grid-template-columns: repeat(3, 300px);
+  gap: 24px;
+  transform: translateX(-35px); /* product image rows moved left */
+}
+
+.big-square-grid .square {
+  width: 300px;
+  height: 300px;
+  transform: none;
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(3, 320px);
+  gap: 28px;
+  transform: translateX(-60px); /* moved a little right */
+}
+
+.portfolio-grid .square {
+  width: 300px;
+  height: 300px;
+}
+
+/* A4 */
+.a4 {
+  aspect-ratio: 2480 / 3508;
+}
+
+.a4-two {
+  display: grid;
+  grid-template-columns: repeat(2, 360px);
+  gap: 36px;
+}
+
+.a4-three {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  gap: 35px;
+  justify-content: flex-start;
+  transform: translateX(-45px); /* corrected: moved left */
+}
+
+/* LARGE */
+.large {
+  width: 900px;
+  aspect-ratio: var(--hero-8k-ratio);
+}
+
+.large-stack {  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 0;
+}
+
+.plot-banner {
+  width: 900px;
+  aspect-ratio: 12960 / 4320;
+}
+
+.slot-1-3 {
+  margin-bottom: 28px;
+}
+
+.slot-4-5 {
+  margin-bottom: 28px;
+}
+
+.right .square-grid {
+  margin-right: 55px;
+}
+
+
+/* REAL ESTATE CUSTOM LAYOUT — slots 21 to 27 */
+.real-estate-layout {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 220px 300px 220px;
+  grid-template-rows: 220px 220px 220px 220px;
+  column-gap: 48px;
+  row-gap: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.real-estate-gallery {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.real-large-wrap {
+  width: 900px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.real-large-bottom {
+  width: 900px;
+  aspect-ratio: 3 / 1; /* 7680 × 2560 px */
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+
+.real-slot {
+  width: 220px;
+  height: 220px;
+  aspect-ratio: 1080 / 1080; /* source slot size: 1080 x 1080 px */
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.real-a4 {
+  width: 300px;
+  height: auto;
+  aspect-ratio: 2480 / 3508; /* A4 portrait */
+  grid-column: 2;
+  grid-row: 2 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  align-self: center;
+}
+
+.real-top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.real-left-1 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.real-right-1 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.real-left-2 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.real-right-2 {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.real-bottom {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+
+/* REAL ESTATE LARGE SLOT BELOW 21-27 */
+.mixed-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 35px;
+  margin-right: 55px;
+}
+
+.mixed-row {
+  display: grid;
+  grid-template-columns: 220px 300px 220px;
+  gap: 24px;
+  align-items: center;
+}
+
+.mixed-row .square {
+  width: 220px;
+  height: 220px;
+}
+
+.mixed-row .a4 {
+  width: 300px;
+  height: auto;
+}
+
+.mixed-row-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 24px;
+}
+
+.last-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.last-hero {
+  margin-bottom: 55px;
+}
+
+/* FLYERS DESIGN SECTION */
+.flyer-hero {
+  width: 3500px;
+  aspect-ratio: var(--hero-8k-ratio);
+  margin: 0 auto 80px auto;
+  display: block;
+}
+
+.flyers-content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.flyers-grid {
+  width: 940px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-left: -70px; /* moved a little right */
+}
+
+.flyer-slot {
+  width: 100%;
+  aspect-ratio: var(--hero-8k-ratio);
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.flyers-text {
+  width: 380px;
+  color: white;
+  margin-top: 70px;
+  flex-shrink: 0;
+}
+
+.flyers-text h2 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.flyers-text p {
+  font-size: 24px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* CENTER ALL HERO IMAGE SLOTS */
+.brand-cover,
+.hero,
+.last-hero,
+.flyer-hero {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* PHONE RESPONSIVE */
+
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+#lightbox-img {
+  max-width: 92%;
+  max-height: 92%;
+  object-fit: contain;
+  cursor: default;
+  background: transparent;
+}
+
+#close {
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+
+
+/* Disable mobile rearrangement: keep desktop layout even on small screens */
+
+
+.brand-extra-wide {
+  display: none;
+}
+
+
+/* REAL ESTATE PHONE LOCK */
+
+
+
+/* REAL ESTATE LARGE SLOT PHONE LOCK */
+
+
+
+/* REAL ESTATE GALLERY PHONE LOCK */
+
+
+
+/* SLOT ANIMATION PHONE LOCK */
+
+
+/* TOMFORT COLUMN POSITION FIX */
+
+
+/* Keep desktop position on every phone; JS only scales the full page. */
+
+
+@media (min-width: 1451px) {
+  #site-scale-shell {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* REAL ESTATE CENTER ALIGN FIX */
+.real-top,
+.real-a4,
+.real-bottom {
+  justify-self: center !important;
+  align-self: center !important;
+}
+
+.real-a4 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.real-top,
+.real-bottom {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* IMAGE SLOT BACKGROUND BLEND FIX
+   Real image add korle black box/solid background thakbe na.
+   Transparent PNG/JPG edge soft vabe background er shathe mishe jabe. */
+img,
+.zoom-img,
+.square,
+.brand-small,
+.brand-wide,
+.brand-banner,
+.real-slot,
+.real-a4,
+.real-large-bottom,
+.flyer-slot,
+.flyer-hero,
+.a4-img,
+.a4-three img,
+.portfolio-grid .square,
+.big-square-grid .square {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Soft premium image blending */
+.zoom-img {
+  box-shadow: none;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+/* If any image has transparent area, it will mix cleanly with purple background */
+img {
+  image-rendering: auto;
+}
+
+
+/* SAME-TO-SAME DEVICE SYSTEM
+   Phone, tablet, laptop - shob device e position same thakbe.
+   Only whole website scale hoye device width er moddhe fit hobe. */
+html,
+body {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+#site-scale-viewport {
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#site-scale-shell {
+  width: 1450px !important;
+  max-width: none !important;
+  transform-origin: top left !important;
+  will-change: transform !important;
+}
+
+.portfolio {
+  width: 1450px !important;
+  max-width: none !important;
+  min-width: 1450px !important;
+  margin: 0 !important;
+  padding: 80px 60px !important;
+}
+
+/* Desktop/laptop e center, phone/tablet e full page auto scale */
+@media (min-width: 1451px) {
+  #site-scale-shell {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+/* PERFECT SAME-TO-SAME + NO TEXT GAP FIX
+   Text er line-height/wrap er jonno image slot er moddhe extra gap ashbe na.
+   Image slot gula fixed grid/slot hishebe locked thakbe. */
+* {
+  box-sizing: border-box !important;
+}
+
+img,
+.zoom-img {
+  display: block !important;
+  vertical-align: top !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Image slot containers: text/alt spacing cannot change row gaps */
+.square-grid,
+.big-square-grid,
+.portfolio-grid,
+.real-estate-layout,
+.flyers-grid,
+.a4-two,
+.a4-three,
+.brand-right-row,
+.brand-top-row,
+.brand-top-with-text,
+.tomfort-content,
+.real-estate-gallery {
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Text boxes stay independent; they will not push image slot gaps */
+.section2-wrap,
+.section3-wrap,
+.section4-wrap,
+.section5-wrap,
+.section6-wrap,
+.flyers-content-row,
+.image-text-row,
+.tomfort-wrap {
+  align-items: flex-start !important;
+}
+
+/* Lock grid gaps so every row gap remains fixed */
+.big-square-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 300px) !important;
+  grid-auto-rows: 300px !important;
+  column-gap: 24px !important;
+  row-gap: 24px !important;
+}
+
+.portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 320px) !important;
+  grid-auto-rows: 300px !important;
+  column-gap: 28px !important;
+  row-gap: 28px !important;
+}
+
+.flyers-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  column-gap: 28px !important;
+  row-gap: 28px !important;
+}
+
+.a4-three {
+  display: grid !important;
+  grid-template-columns: repeat(3, 260px) !important;
+  column-gap: 35px !important;
+  row-gap: 0 !important;
+}
+
+/* Real estate custom layout locked */
+.real-estate-layout {
+  display: grid !important;
+  grid-template-columns: 220px 300px 220px !important;
+  grid-template-rows: 220px 220px 220px 220px !important;
+  column-gap: 48px !important;
+  row-gap: 28px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Every image slot keeps exact size; text cannot stretch it */
+.square,
+.big-square-grid .square,
+.portfolio-grid .square,
+.real-slot,
+.real-a4,
+.real-large-bottom,
+.flyer-slot,
+.a4,
+.a4-three img,
+.brand-small,
+.brand-wide,
+.brand-banner {
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Text keeps normal readable line-height, but image layout stays locked */
+.section2-text,
+.section3-text,
+.section4-text,
+.section5-text,
+.section6-text,
+.text-box,
+.flyers-text,
+.brand-cover-text,
+.tomfort-text,
+.about-left,
+.about-right {
+  font-size: initial !important;
+  line-height: normal !important;
+}
+
+/* Same-to-same all devices stays active */
+#site-scale-shell {
+  width: 1450px !important;
+  min-width: 1450px !important;
+  max-width: none !important;
+  transform-origin: top left !important;
+}
+
+.portfolio {
+  width: 1450px !important;
+  min-width: 1450px !important;
+  max-width: none !important;
+}
+
+
+/* FOOD SECTION TEXT-GAP FIX
+   Text er height er jonno niche image slot er age gap ashbe na. */
+.image-text-row {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 510px !important; /* same as 2 A4 image row height */
+  margin-bottom: 28px !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+.image-text-row .a4-two {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 510px !important;
+}
+
+.image-text-row .text-box {
+  position: absolute !important;
+  left: 920px !important;
+  top: -115px !important;
+  width: 360px !important;
+  margin: 0 !important;
+  color: #ffffff !important;
+  z-index: 5 !important;
+  font-size: initial !important;
+  line-height: normal !important;
+}
+
+.image-text-row .text-box h2 {
+  font-size: 45px !important;
+  line-height: 1.1 !important;
+  margin: 0 0 18px 0 !important;
+}
+
+.image-text-row .text-box p {
+  font-size: 39px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* Large image stack will now start directly after the A4 row, not after text height */
+.large-stack {
+  margin-top: 0 !important;
+  gap: 28px !important;
+}
+
+
+
+/* MERCHANDISE RIGHT GAP FINAL FIX
+   Left side/text same thakbe, only image slots text er kache ashbe. */
+.tomfort-wrap {
+  gap: 0 !important;
+  margin-left: 45px !important;
+  justify-content: flex-start !important;
+  width: calc(100% - 45px) !important;
+}
+
+.tomfort-text {
+  width: 330px !important;
+  flex-shrink: 0 !important;
+}
+
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-95px) !important; /* right-side gap reduced */
+}
+
+
+/* MERCHANDISE FIRST SLOT MATCH SECOND FIX
+   First small slot ke 2nd slot er moto ektu right e ana holo. */
+.brand-right-row .brand-small:first-child {
+  margin-left: 24px !important;
+}
+
+
+
+/* CONTINUOUS ENDING ANIMATION SECTION */
+.ending-animation-section {
+  width: 100%;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ending-animation-stage {
+  position: relative;
+  width: 1180px;
+  min-height: 560px;
+  border-radius: 44px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(152, 78, 255, 0.35), transparent 28%),
+    radial-gradient(circle at 82% 72%, rgba(255, 52, 166, 0.24), transparent 28%),
+    linear-gradient(135deg, rgba(16, 3, 48, 0.98), rgba(45, 8, 92, 0.98), rgba(12, 2, 34, 0.98));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 35px 90px rgba(0,0,0,0.38),
+    0 0 90px rgba(154, 88, 255, 0.18);
+}
+
+/* moving aurora background */
+.ending-aurora {
+  position: absolute;
+  inset: -35%;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(183, 93, 255, 0.28) 60deg,
+      transparent 130deg,
+      rgba(255, 70, 173, 0.22) 210deg,
+      transparent 300deg,
+      rgba(96, 165, 250, 0.18) 360deg
+    );
+  filter: blur(34px);
+  opacity: 0.75;
+  animation: auroraSpin 14s linear infinite;
+}
+
+.ending-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,0.85) 82%, transparent 100%);
+  animation: gridMove 9s linear infinite;
+  pointer-events: none;
+}
+
+.ending-orbit {
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,255,255,0.09);
+  animation: orbitRotate 12s linear infinite;
+  pointer-events: none;
+}
+
+.ending-orbit::before,
+.ending-orbit::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #d8a7ff 55%, transparent 75%);
+  box-shadow: 0 0 28px rgba(218, 167, 255, 0.8);
+}
+
+.ending-orbit::before {
+  left: 50%;
+  top: -9px;
+}
+
+.ending-orbit::after {
+  left: 50%;
+  bottom: -9px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #fff, #ff8acb 55%, transparent 75%);
+}
+
+.ending-orbit.two {
+  width: 430px;
+  height: 430px;
+  animation-duration: 8s;
+  animation-direction: reverse;
+  opacity: 0.85;
+}
+
+.ending-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ending-rings span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.65);
+  opacity: 0;
+  animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ending-rings span:nth-child(1) { width: 190px; height: 190px; animation-delay: 0s; }
+.ending-rings span:nth-child(2) { width: 330px; height: 330px; animation-delay: 1s; }
+.ending-rings span:nth-child(3) { width: 480px; height: 480px; animation-delay: 2s; }
+.ending-rings span:nth-child(4) { width: 650px; height: 650px; animation-delay: 3s; }
+
+.ending-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  padding: 45px 30px;
+}
+
+.ending-label {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+  animation: labelFloat 3.2s ease-in-out infinite;
+}
+
+.ending-headline {
+  margin: 0;
+  font-size: 92px;
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.18),
+    0 0 44px rgba(176, 93, 255, 0.28);
+  animation: headlineBreath 3.8s ease-in-out infinite;
+}
+
+.ending-headline .accent {
+  display: block;
+  background: linear-gradient(90deg, #ffffff, #d7b6ff, #ff9cd2, #ffffff);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 4s linear infinite;
+}
+
+.ending-shine {
+  width: 260px;
+  height: 4px;
+  margin: 28px auto 25px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
+  animation: shineLoop 2.6s ease-in-out infinite;
+}
+
+.ending-subtext {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 24px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+  animation: subtextFloat 4.2s ease-in-out infinite;
+}
+
+.ending-marquee {
+  position: absolute;
+  left: 0;
+  bottom: 26px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 4;
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+
+.ending-marquee-track {
+  display: flex;
+  gap: 38px;
+  width: max-content;
+  animation: endingMarquee 18s linear infinite;
+}
+
+.ending-marquee-track span {
+  flex: 0 0 auto;
+  color: rgba(255,255,255,0.58);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ending-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.ending-sparkles span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.95), rgba(227,155,255,0.25) 65%, transparent 75%);
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+  animation: sparkleTwinkle 3.4s ease-in-out infinite;
+}
+
+.ending-sparkles span:nth-child(1) { left: 12%; top: 20%; animation-delay: 0s; }
+.ending-sparkles span:nth-child(2) { left: 22%; top: 72%; animation-delay: 1.1s; }
+.ending-sparkles span:nth-child(3) { left: 44%; top: 14%; animation-delay: 0.7s; }
+.ending-sparkles span:nth-child(4) { left: 63%; top: 77%; animation-delay: 1.7s; }
+.ending-sparkles span:nth-child(5) { left: 78%; top: 25%; animation-delay: 0.3s; }
+.ending-sparkles span:nth-child(6) { left: 88%; top: 58%; animation-delay: 1.4s; }
+
+@keyframes auroraSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 70px 70px, 70px 70px; }
+}
+
+@keyframes orbitRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes ringPulse {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.55); }
+  22% { opacity: 0.28; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes labelFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(-8px); opacity: 1; }
+}
+
+@keyframes headlineBreath {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.025); filter: brightness(1.12); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 260% 50%; }
+}
+
+@keyframes shineLoop {
+  0%, 100% { opacity: 0.35; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1.15); }
+}
+
+@keyframes subtextFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.78; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+
+@keyframes endingMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.65); }
+  45% { opacity: 0.95; transform: scale(1.2); }
+  75% { opacity: 0.45; transform: scale(0.9); }
+}
+
+
+
+/* ENDING MARQUEE BOX SIZE FIX */
+.ending-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 34px !important;
+  width: max-content;
+  animation: endingMarquee 18s linear infinite;
+}
+
+.ending-marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 78px;
+  padding: 0 46px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 12px 36px rgba(150, 80, 255, 0.16);
+  color: rgba(255,255,255,0.92);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  flex: 0 0 auto;
+}
+
+.ending-marquee-track .marquee-thanks {
+  min-width: 620px;   /* much bigger */
+  font-size: 32px;
+}
+
+.ending-marquee-track .marquee-portfolio {
+  min-width: 620px;   /* same overall box size */
+  font-size: 32px;
+}
+
+
+/* ENDING BIG CONTAINER SIZE FIX */
+.ending-animation-section {
+  min-height: 900px !important;
+  padding: 170px 0 110px !important;
+}
+
+.ending-animation-stage {
+  width: 1320px !important;
+  min-height: 660px !important;
+  border-radius: 52px !important;
+}
+
+.ending-content {
+  max-width: 980px !important;
+  padding: 55px 40px !important;
+}
+
+.ending-headline {
+  font-size: 106px !important;
+}
+
+.ending-subtext {
+  max-width: 780px !important;
+  font-size: 26px !important;
+}
+
+.ending-marquee {
+  bottom: 34px !important;
+}
+
+.ending-orbit {
+  width: 720px !important;
+  height: 720px !important;
+}
+
+.ending-orbit.two {
+  width: 520px !important;
+  height: 520px !important;
+}
+
+
+/* MERCHANDISE WHOLE SECTION RIGHT MOVE */
+.tomfort-wrap {
+  margin-left: 170px !important;      /* whole section moved right */
+  width: calc(100% - 170px) !important;
+  gap: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.tomfort-text {
+  width: 330px !important;
+  flex-shrink: 0 !important;
+}
+
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-75px) !important; /* keep image slots close to text */
+}
+
+.brand-right-row .brand-small:first-child {
+  margin-left: 24px !important;
+}
+
+
+/* MERCHANDISE TEXT LEFT FINISH FIX */
+.tomfort-text {
+  width: 330px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-55px) !important; /* text moved left */
+}
+
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-75px) !important; /* image boxes stay in place */
+}
+
+
+/* MERCHANDISE TEXT LEFT + UP FINAL FIX */
+.tomfort-text {
+  width: 330px !important;
+  flex-shrink: 0 !important;
+  transform: translate(-85px, -22px) !important; /* more left + a bit up */
+}
+
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-75px) !important; /* keep image boxes in place */
+}
+
+
+
+/* FINAL MERCHANDISE RIGHT SHIFT ADJUSTMENT */
+.tomfort-wrap {
+  margin-left: 215px !important;
+  width: calc(100% - 215px) !important;
+  gap: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.tomfort-text {
+  width: 330px !important;
+  flex-shrink: 0 !important;
+  transform: translate(-50px, -22px) !important;
+}
+
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+  transform: translateX(-30px) !important;
+}
+
+.brand-right-row .brand-small:first-child {
+  margin-left: 24px !important;
+}
+
+
+/* VISUAL IDENTITY TEXT CLEAR RIGHT FIX */
+.brand-cover-text {
+  left: 1085px !important;   /* clearly moved right */
+  width: 320px !important;
+  top: 90px !important;
+  z-index: 20 !important;
+}
+
+.brand-cover-text h2 {
+  font-size: 44px !important;
+  line-height: 1.08 !important;
+}
+
+.brand-cover-text p {
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+}
+
+
+
+/* Movie poster section moved slightly left to reduce right-side gap */
+.section6-wrap {
+  transform: translateX(-42px) !important;
+}
+.a4-three {
+  margin-left: 0 !important;
+}
+.section6-text {
+  margin-left: 160px !important;
+}
+
+
+/* ENDING BOX UP + GAP REDUCE FIX */
+.ending-animation-section {
+  padding-top: 60px !important;
+  padding-bottom: 90px !important;
+  min-height: 760px !important;
+  align-items: flex-start !important;
+}
+
+.ending-animation-stage {
+  margin-top: 0 !important;
+  transform: translateY(-70px) !important;
+}
+
+
+/* ABOUT PROFILE SLOT - slight right + slight up */
+.about-profile-wrap{
+  margin-top: 66px !important;
+  margin-left: 14px !important;
+}
+
+
+/* ABOUT PROFILE SLOT - CIRCLE STYLE */
+.about-profile-wrap{
+  width: 360px !important;
+  max-width: 360px !important;
+  height: 360px !important;
+  margin-top: 54px !important;
+  margin-left: 8px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #8b542d !important;
+  border: 14px solid #9a5f34 !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18) !important;
+}
+
+.about-profile-wrap::after{
+  display: none !important;
+}
+
+.about-profile{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+
+/* TOMFORT IMAGE ALIGN FINAL FIX
+   Uporer 3 ta choto slot ar nicher boro slot er beginning/end same line e thakbe. */
+.tomfort-content {
+  width: 760px !important;
+  flex-shrink: 0 !important;
+}
+
+.tomfort-content .brand-right-row {
+  width: 100% !important;
+  display: flex !important;
+  gap: 20px !important;
+  margin-bottom: 35px !important;
+  align-items: stretch !important;
+}
+
+.tomfort-content .brand-small {
+  flex: 0 0 calc((100% - 40px) / 3) !important;
+  width: calc((100% - 40px) / 3) !important;
+  margin-left: 0 !important;
+}
+
+.tomfort-content .brand-small:first-child {
+  margin-left: 0 !important;
+}
+
+.tomfort-content .brand-banner {
+  width: 100% !important;
+  margin-left: 0 !important;
+  display: block !important;
+}
+
+
+/* SOFTWARE ICON SLOTS */
+.software-icon-block {
+  align-self: start;
+}
+
+.software-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 82px);
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+.software-slot {
+  width: 82px;
+  height: 82px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.15);
+}
+
+.software-slot img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  cursor: default !important;
+}
+
+.software-slot img[src=""],
+.software-slot img:not([src]) {
+  display: none !important;
+}
+
+
+/* SOFTWARE ICON SIZE BIGGER FIX */
+.software-icons {
+  display: grid !important;
+  grid-template-columns: repeat(2, 96px) !important;
+  gap: 20px !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin-top: 8px !important;
+}
+
+.software-slot {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.15) !important;
+}
+
+.software-slot img {
+  width: 72px !important;
+  height: 72px !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  cursor: default !important;
+  transform: scale(1.12) !important;
+}
+
+
+
+/* SOFTWARE ICONS BIGGER AND CLEAN */
+.software-icons {
+  display: grid !important;
+  grid-template-columns: repeat(2, 90px) !important;
+  column-gap: 14px !important;
+  row-gap: 14px !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin-top: 10px !important;
+}
+
+.software-slot {
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.software-slot img {
+  width: 86px !important;
+  height: 86px !important;
+  max-width: 86px !important;
+  max-height: 86px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: block !important;
+}
+
+
+/* ===== SAFE FINAL POLISH - NO SECTION MIXING ===== */
+
+/* image hover */
+.zoom-img {
+  transition: transform .35s ease, filter .35s ease, box-shadow .35s ease !important;
+}
+
+.zoom-img:hover {
+  transform: scale(1.022);
+  filter: brightness(1.08);
+  box-shadow: 0 18px 45px rgba(120, 70, 255, 0.22);
+}
+
+/* clean text tone */
+.about-intro,
+.brand-cover-text p,
+.tomfort-text p,
+.text-box p,
+.section2-text p,
+.section3-text p,
+.section4-text p,
+.section5-text p,
+.section6-text p,
+.flyers-text p {
+  letter-spacing: -0.01em;
+}
+
+/* keep Real Estate separate from Fashion */
+#fashion-design .real-estate-gallery {
+  display: none !important;
+}
+
+#real-estate {
+  display: block !important;
+}
+
+/* safe ending animation size */
+.ending-animation-section {
+  min-height: 820px !important;
+  padding: 90px 0 110px !important;
+  align-items: center !important;
+}
+
+.ending-animation-stage {
+  width: 1240px !important;
+  min-height: 620px !important;
+  transform: none !important;
+  border-radius: 48px !important;
+}
+
+.ending-headline {
+  font-size: 100px !important;
+  line-height: 0.95 !important;
+}
+
+.ending-subtext {
+  font-size: 25px !important;
+  line-height: 1.55 !important;
+}
+
+.ending-marquee-track span {
+  min-height: 72px !important;
+  font-size: 26px !important;
+}
+
+/* software icons clean */
+.software-icons {
+  display: grid !important;
+  grid-template-columns: repeat(2, 90px) !important;
+  column-gap: 14px !important;
+  row-gap: 14px !important;
+}
+
+.software-slot {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.software-slot img {
+  width: 86px !important;
+  height: 86px !important;
+  max-width: 86px !important;
+  max-height: 86px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* ===== PERFORMANCE / LAG FIX ===== */
+
+/* Browser will not fully render sections until user scrolls near them */
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+/* Make image rendering smoother */
+img,
+.zoom-img {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Hover effects only on laptop/desktop mouse devices */
+@media (hover: none) and (pointer: coarse) {
+  .zoom-img:hover {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .intro-splash span,
+  .ending-aurora,
+  .ending-orbit,
+  .ending-rings span,
+  .ending-sparkles span {
+    animation: none !important;
+  }
+
+  .ending-animation-stage {
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25) !important;
+  }
+}
+
+/* Keep marquee smoother */
+.slot-track,
+.ending-marquee-track {
+  will-change: transform;
+}
+
+/* Do not keep too many elements on GPU */
+.zoom-img {
+  will-change: auto !important;
+}
+
+/* Reduce heavy glowing shadow during scroll */
+.ending-animation-stage {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 22px 55px rgba(0,0,0,0.30) !important;
+}
+
+/* Safer smooth scroll performance */
+html {
+  scroll-behavior: auto !important;
+}
+
+
+/* ===== LAPTOP/DESKTOP EFFECTS KEEP ===== */
+/* Laptop/desktop e hover, glow, animation thakbe */
+@media (min-width: 900px) and (hover: hover) {
+  .zoom-img:hover {
+    transform: scale(1.022) !important;
+    filter: brightness(1.08) !important;
+    box-shadow: 0 18px 45px rgba(120, 70, 255, 0.22) !important;
+  }
+
+  .intro-splash span,
+  .ending-aurora,
+  .ending-orbit,
+  .ending-rings span,
+  .ending-sparkles span,
+  .slot-track,
+  .ending-marquee-track {
+    animation-play-state: running !important;
+  }
+}
+
+/* Phone/tablet e lag komanor jonno heavy effects light thakbe */
+@media (max-width: 899px), (hover: none) and (pointer: coarse) {
+  .zoom-img:hover {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .intro-splash span,
+  .ending-aurora,
+  .ending-orbit,
+  .ending-rings span,
+  .ending-sparkles span {
+    animation: none !important;
+  }
+}
+
+
+/* TRAVEL SECTION POSITION FIX
+   Travel/Study Abroad er image grid age left e chole jachchilo.
+   Ei fix sudhu travel section er grid ke right/center e ane. */
+#travel-campaign .section5-wrap {
+  justify-content: flex-start !important;
+}
+
+#travel-campaign .portfolio-grid {
+  transform: translateX(45px) !important;
+  margin-left: 0 !important;
+}
+
+#travel-campaign .section5-text {
+  margin-left: 0 !important;
+}
+
+
+/* FINAL PHONE SAME-TO-SAME LOCK
+   Phone, tablet, laptop sob device e same desktop layout thakbe.
+   Screen choto hole pura website scale hoye fit hobe, layout change hobe na. */
+html,
+body {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+#site-scale-viewport {
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#site-scale-shell {
+  width: 1450px !important;
+  min-width: 1450px !important;
+  max-width: none !important;
+  transform-origin: top left !important;
+  will-change: transform !important;
+}
+
+.portfolio {
+  width: 1450px !important;
+  min-width: 1450px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 80px 60px !important;
+}
+
+/* Laptop/large screen e center, phone e auto scale */
+@media (min-width: 1451px) {
+  #site-scale-shell {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+/* FLYERS SECTION FINAL ALIGN FIX
+   Flyer section e cover/image grid side e chole jawa + huge width issue fix. */
+.flyers-section {
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.flyer-hero {
+  width: 1200px !important;
+  max-width: 1200px !important;
+  aspect-ratio: var(--hero-8k-ratio) !important;
+  margin: 0 auto 70px auto !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.flyers-content-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 70px !important;
+  width: 100% !important;
+}
+
+.flyers-grid {
+  width: 900px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 28px !important;
+  margin-left: 0 !important;
+  transform: none !important;
+}
+
+.flyer-slot {
+  width: 100% !important;
+  aspect-ratio: var(--hero-8k-ratio) !important;
+  object-fit: cover !important;
+}
+
+.flyers-text {
+  width: 380px !important;
+  margin-top: 55px !important;
+  margin-left: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+
+/* MOVIE + FLYERS LAG FIX
+   Ei two section e heavy 8K images thakar jonno lag hocchilo.
+   Image decode late hobe, hover shadow kombe, scroll smooth thakbe. */
+#movie-artwork,
+#flyers-design {
+  content-visibility: auto !important;
+  contain-intrinsic-size: 1200px !important;
+  contain: layout paint style !important;
+}
+
+#movie-artwork img,
+#flyers-design img {
+  background: transparent !important;
+  box-shadow: none !important;
+  will-change: auto !important;
+}
+
+#movie-artwork .zoom-img:hover,
+#flyers-design .zoom-img:hover {
+  transform: none !important;
+  filter: brightness(1.03) !important;
+  box-shadow: none !important;
+}
+
+/* Avoid huge paint cost in flyer cover */
+#flyers-design .flyer-hero,
+#movie-artwork .last-hero {
+  box-shadow: none !important;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="site-scale-viewport">
+  <div id="site-scale-shell">
+<!-- PERFORMANCE NOTE: For fastest loading, export portfolio images around 1600px–2500px wide for web instead of 8K/16K. -->
+<main class="portfolio">
+
+<section class="section intro-animation-section">
+  <div class="intro-animation-box">
+    <div class="intro-mini-pills">
+      <span>Make Like This</span>
+      <span>Save</span>
+      <span>Permalink</span>
+    </div>
+
+    <div class="intro-splash">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="intro-logo-wrap">
+      <div class="intro-word" aria-label="portfolio">
+        <span style="--c:#005dff">p</span>
+        <span style="--c:#ff3b30">o</span>
+        <span style="--c:#005dff">r</span>
+        <span style="--c:#005dff">t</span>
+        <span style="--c:#ffb000">f</span>
+        <span style="--c:#005dff">o</span>
+        <span style="--c:#7b3cff">l</span>
+        <span style="--c:#00a56a">i</span>
+        <span style="--c:#ff3b30">o</span>
+      </div>
+      <p class="intro-subtitle">Communication Design | 2026</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section slot-animation-section">
+  <div class="slot-marquee">
+    <div class="slot-track">
+        <a class="animated-text-slot" href="#brand-identity">Brand Identity</a>
+        <a class="animated-text-slot" href="#social-media">Social Media</a>
+        <a class="animated-text-slot" href="#social-media">Poster Design</a>
+        <a class="animated-text-slot" href="#flyers-design">Flyer Design</a>
+        <a class="animated-text-slot" href="#product-ads">Product Ads</a>
+        <a class="animated-text-slot" href="#fashion-design">Fashion Design</a>
+        <a class="animated-text-slot" href="#real-estate">Real Estate</a>
+        <a class="animated-text-slot" href="#travel-campaign">Travel Campaign</a>
+        <a class="animated-text-slot" href="#movie-artwork">Movie Artwork</a>
+        <a class="animated-text-slot" href="#about-me">Creative Portfolio</a>
+        <a class="animated-text-slot" href="#brand-identity">Brand Identity</a>
+        <a class="animated-text-slot" href="#social-media">Social Media</a>
+        <a class="animated-text-slot" href="#social-media">Poster Design</a>
+        <a class="animated-text-slot" href="#flyers-design">Flyer Design</a>
+        <a class="animated-text-slot" href="#product-ads">Product Ads</a>
+        <a class="animated-text-slot" href="#fashion-design">Fashion Design</a>
+        <a class="animated-text-slot" href="#real-estate">Real Estate</a>
+        <a class="animated-text-slot" href="#travel-campaign">Travel Campaign</a>
+        <a class="animated-text-slot" href="#movie-artwork">Movie Artwork</a>
+        <a class="animated-text-slot" href="#about-me">Creative Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="section about-section" id="about-me">
+  <div class="about-card">
+
+    <div class="about-left">
+      <p class="about-kicker">About Me</p>
+
+      <h1 class="about-name">
+        Ahad Khan <br>
+      </h1>
+       <p class="about-title">Graphic Designer & Creative Visual Designer</p>
+
+      <div class="about-profile-wrap">
+        <img class="zoom-img about-profile" src="ppp.png" alt="Profile Picture" onerror="this.style.display='none';" decoding="async" loading="eager">
+      </div>
+    </div>
+
+    <div class="about-right">
+      <p class="about-intro">
+        I'm Ahad Khan, a Graphic Designer with over four years of professional experience creating visually compelling and impactful designs.
+
+With an academic background in Education and a diverse creative journey, I bring creativity, structure, and audience understanding to every project.
+
+I have collaborated with clients across the USA, UAE, Belgium, Malaysia, Palestine, India, and Bangladesh, delivering designs that are visually engaging and strategically effective.
+
+My expertise includes logo design, social media creatives, print materials, book covers, flyer designs, product ads, and brand identity visuals.
+
+I believe great design is more than just aesthetics — it is an experience that communicates, connects, and leaves a lasting impression. 
+
+
+      </p>
+
+      <div class="about-block">
+        <h3>Skills</h3>
+        <ul>
+          <li>Social Media Poster Design</li>
+          <li>Brand Identity & Visual Branding</li>
+          <li>Flyer, Brochure & Print Design</li>
+          <li>Product Advertisement Design</li>
+          <li>Fashion & Apparel Poster Design</li>
+          <li>Real Estate Campaign Design</li>
+          <li>Creative Layout & Typography</li>
+          <li>Photo Editing & Manipulation</li>
+          <li>AI-Based Creative Image Design</li>
+        </ul>
+      </div>
+
+      <div class="about-block software-icon-block">
+        <h3>Software</h3>
+
+        <div class="software-icons">
+          <div class="software-slot">
+            <img src="4.png" alt="Photoshop Icon" decoding="async" loading="eager">
+          </div>
+
+          <div class="software-slot">
+            <img src="2.png" alt="Illustrator Icon" decoding="async" loading="eager">
+          </div>
+
+          <div class="software-slot">
+            <img src="3.png" alt="InDesign Icon" decoding="async" loading="eager">
+          </div>
+
+          <div class="software-slot">
+            <img src="1.png" alt="Canva Icon" decoding="async" loading="eager">
+          </div>
+        </div>
+      </div>
+
+
+     <div class="about-block about-contact">
+  <h3>Contact</h3>
+  <ul>
+    <li>
+      <span class="about-icon"><i class="fa-solid fa-envelope"></i></span>
+      <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a>
+    </li>
+
+    <li>
+      <span class="about-icon"><i class="fa-brands fa-instagram"></i></span>
+      <a href="#">instagram.com/yourprofile</a>
+    </li>
+
+    <li>
+      <span class="about-icon"><i class="fa-brands fa-facebook-f"></i></span>
+      <a href="#">facebook.com/yourpage</a>
+    </li>
+
+    <li>
+      <span class="about-icon"><i class="fa-solid fa-phone"></i></span>
+      <a href="#">+880 1XXXXXXXXX</a>
+    </li>
+  </ul>
+</div>
+
+      <div class="about-block">
+        <h3>Full CV</h3>
+        <p>Scan to view my detailed portfolio / CV</p>
+        <div class="about-qr-box"><span>QR</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section brand-section" id="brand-identity">
+  <div class="brand-cover-row">
+    <img width="7680" height="4320" class="zoom-img brand-cover" src="visual identy cover.png" alt="Brand Identity Cover" decoding="async" loading="eager">
+  </div>
+
+  <div class="brand-wrap">
+    <div class="brand-content">
+      <div class="brand-top-with-text">
+        <div class="brand-top-row">
+        <img class="zoom-img brand-img1" src="brand identity 5.png" alt="Brand 1" loading="lazy" decoding="async">
+        <img class="zoom-img brand-img2" src="brand identity 4.png" alt="Brand 2" loading="lazy" decoding="async">
+        <img class="zoom-img brand-img3" src="brand identity.png" alt="Brand 3" loading="lazy" decoding="async">
+      </div>
+
+
+
+    <div class="brand-cover-text">
+      <h2>Hellotech </h2>
+      <p>
+        Hellotech is a modern technology service brand concept created for mobile support, digital solutions, and smart customer assistance. The identity uses a bold red-and-black visual style to communicate trust, speed, innovation, and professional service presentation.
+      </p>
+    </div>
+      </div>
+
+      
+      <img width="7680" height="4320" class="zoom-img brand-wide" src="brand identity 2 copy.png" alt="Brand 4" loading="lazy" decoding="async">
+      <img width="7680" height="4320" class="zoom-img brand-wide" src="brand identity 3.png" alt="Brand 5" loading="lazy" decoding="async">
+      <div class="tomfort-wrap">
+        <div class="tomfort-text">
+          <h2>TomFort</h2>
+          <p>TomFort is a premium lifestyle merchandise brand designed for apparel, accessories, and modern fashion products. The mockups highlight logo application, product branding, and a strong blue-and-black visual identity.
+
+          </p>
+        </div>
+
+        <div class="tomfort-content">
+          <div class="brand-right-row">
+            <img class="zoom-img brand-small" src="cap mock 1.png" alt="Brand 6" loading="lazy" decoding="async">
+            <img class="zoom-img brand-small" src="hoodie mock up f.png" alt="Brand 7" loading="lazy" decoding="async">
+            <img class="zoom-img brand-small" src="brand logo tom.png" alt="Brand 8" loading="lazy" decoding="async">
+          </div>
+
+          <img width="7680" height="4320" class="zoom-img brand-banner" src="topfort mockp.png big 1.png" alt="Brand 9" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="social-media">
+  <div class="center hero-wrap">
+    <img width="7680" height="4320" class="zoom-img hero" src="social midia png.png" alt="Hero" loading="lazy" decoding="async">
+  </div>
+
+  <div class="left slot-1-3">
+    <div class="square-grid">
+      <img class="zoom-img square" src="food poster.jpg" alt="1" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="PIZZA POSTER.jpg" alt="2" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="coffee poster.jpg" alt="3" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <div class="image-text-row">
+    <div class="a4-two">
+      <img class="zoom-img a4" src="shawarma 1.png" alt="4" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="shawarma 3.png" alt="5" loading="lazy" decoding="async">
+    </div>
+
+    <div class="text-box">
+      <h2>Creative Food<br>Poster Design</h2>
+      <p>
+        A collection of creative food posters designed for restaurants, cafés, and food brands. These visuals focus on appetizing presentation, promotional offers, bold typography, and social media-ready layouts to attract customers and increase engagement.
+      </p>
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="large-stack">
+      <img width="7680" height="4320" class="zoom-img large" src="shawarma 2.png" alt="6" loading="lazy" decoding="async">
+      <img width="7680" height="4320" class="zoom-img large" src="food brand.png" alt="7" loading="lazy" decoding="async">
+      <img width="7680" height="4320" class="zoom-img large" src="food brand 2.png" alt="8" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="product-ads">
+  <div class="section2-wrap">
+    <div class="section2-text">
+      <h2>Creative<br>Product Ads</h2>
+      <p>
+        This section presents high-impact product ads designed for digital marketing and promotional campaigns. Each design highlights the product clearly, uses strong visual composition, and creates a professional advertising look for modern brands.
+      </p>
+    </div>
+
+    <div class="square-grid big-square-grid">
+      <img class="zoom-img square" src="smart watch.jpg" alt="9" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="smart watch 2.jpg" alt="10" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="smart phone poster.jpg" alt="11" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="SUNSCREAM POSTER.jpg" alt="12" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="GYM POSTER 2.jpg" alt="13" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="perfume social media poster.jpg" alt="14" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="section left" id="fashion-design">
+  <div class="section3-wrap">
+    <div class="a4-two">
+      <img class="zoom-img a4" src="cloth1.png" alt="15" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="cloth3.png" alt="16" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="cloth2.png" alt="17" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="cloth 5.png" alt="18" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="cloth 6.png" alt="19" loading="lazy" decoding="async">
+      <img class="zoom-img a4" src="cloth.png" alt="20" loading="lazy" decoding="async">
+    </div>
+
+    <div class="section3-text">
+      <h2>Fashion Brand<br>Posters</h2>
+      <p>
+       This section presents modern clothing advertisements designed for fashion brands and apparel businesses.
+Each poster highlights the product clearly through stylish composition, premium visuals, strong typography, and social media-ready presentation.
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="real-estate">
+  <div class="section4-wrap">
+    <div class="section4-text">
+      <h2>Real Estate<br>Poster Design</h2>
+      <p>
+        Property advertisements, land project banners, real estate social media posts, and modern housing campaign visuals designed to promote properties in a clear, attractive, and professional way.
+      </p>
+    </div>
+
+    <div class="real-estate-gallery">
+    <div class="real-estate-layout">
+      <img width="1080" height="1080" class="zoom-img real-slot real-top" src="real estate 3 poster.jpg" alt="21" loading="lazy" decoding="async">
+
+      <img width="1080" height="1080" class="zoom-img real-slot real-left-1" src="REALESTATE 4 (2).png" alt="22" loading="lazy" decoding="async">
+      <img class="zoom-img real-a4" src="REAL ESTATE.png" alt="23" loading="lazy" decoding="async">
+      <img width="1080" height="1080" class="zoom-img real-slot real-right-1" src="REAL ESTATE 2 POSTER.png" alt="24" loading="lazy" decoding="async">
+
+      <img width="1080" height="1080" class="zoom-img real-slot real-left-2" src="plot 1.jpg" alt="25" loading="lazy" decoding="async">
+      <img width="1080" height="1080" class="zoom-img real-slot real-right-2" src="plot 2.png" alt="26" loading="lazy" decoding="async">
+
+      <img width="1080" height="1080" class="zoom-img real-slot real-bottom" src="plot 1.jpg" alt="27" loading="lazy" decoding="async">
+    </div>
+
+    <div class="real-large-wrap">
+      <img width="7680" height="2560" class="zoom-img real-large-bottom" src="plot 4.png" alt="28" loading="lazy" decoding="async">
+    </div>
+    </div>
+</div>
+</section>
+
+<section class="section" id="travel-campaign">
+  <div class="section5-wrap">
+    <div class="square-grid portfolio-grid">
+      <img class="zoom-img square" src="TRAVEL POSTER.jpg" alt="28" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="TRAVEL POSTER 2.jpg" alt="29" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="travel poster 3.jpg" alt="30" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="TRAVELPOSTE 4.jpg" alt="31" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="business markiting poster.jpg" alt="32" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="study abroad 1.jpg" alt="33" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="study abroad 2.jpg" alt="34" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="study abroad 3.jpg" alt="35" loading="lazy" decoding="async">
+      <img class="zoom-img square" src="study abroad 4.jpg" alt="36" loading="lazy" decoding="async">
+    </div>
+
+    <div class="section5-text">
+      <h2>Travel & Study Abroad<br>Campaigns</h2>
+      <p>
+        Creative promotional designs for travel services, student consultancy, visa assistance, study abroad programs, and destination marketing. These visuals are designed to attract attention, build trust, and present services in a modern and professional way.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section last-section" id="movie-artwork">
+  <img width="7680" height="4320" class="zoom-img last-hero" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="movie poster cover.png" alt="37" loading="lazy" decoding="async" fetchpriority="low">
+
+  <div class="section6-wrap">
+    <div class="section6-text">
+      <h2>Movie Poster<br>Design</h2>
+      <p>
+        Creative cinematic posters, film promotional visuals, dramatic compositions, and key art designs created to capture attention and bring stories to life through strong visual impact.
+      </p>
+    </div>
+
+    <div class="a4-three">
+      <img class="zoom-img a4" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="BILLBOARD.jpg" alt="38" loading="lazy" decoding="async" fetchpriority="low">
+      <img class="zoom-img a4" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="BILL BOARD 2.jpg" alt="39" loading="lazy" decoding="async" fetchpriority="low">
+      <img class="zoom-img a4" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="BILLBOARD 1.jpg" alt="40" loading="lazy" decoding="async" fetchpriority="low">
+    </div>
+  </div>
+</section>
+
+
+<section class="section flyers-section" id="flyers-design">
+  <img width="7680" height="4320" class="zoom-img flyer-hero" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="fkyer xcover.png" alt="Flyers Design Cover" loading="lazy" decoding="async" fetchpriority="low">
+
+  <div class="flyers-content-row">
+
+    <div class="flyers-grid">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="flyer 2c.png" alt="Flyer 1" loading="lazy" decoding="async" fetchpriority="low">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="flyer.png" alt="Flyer 2" loading="lazy" decoding="async" fetchpriority="low">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="Free_Roll-up_Mockup_2.jpg" alt="Flyer 3" loading="lazy" decoding="async" fetchpriority="low">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="Free_Roll-up_Mockup_1.jpg" alt="Flyer 4" loading="lazy" decoding="async" fetchpriority="low">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="flyer poster x.png" alt="Flyer 5" loading="lazy" decoding="async" fetchpriority="low">
+      <img width="7680" height="4320" class="zoom-img flyer-slot" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%229%22%20viewBox%3D%220%200%2016%209%22%3E%3C/svg%3E" data-src="flyer poster xx.png" alt="Flyer 6" loading="lazy" decoding="async" fetchpriority="low">
+    </div>
+
+    <div class="flyers-text">
+      <h2>Flyer & Roll-Up<br>Banner Design</h2>
+      <p>
+        Creative flyer layouts and roll-up banner designs for business promotions, campaigns, events, and brand marketing. Designed to deliver clear communication, strong visual appeal, and professional print-ready presentation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section ending-animation-section" id="ending-animation">
+  <div class="ending-animation-stage visible">
+    <div class="ending-aurora"></div>
+    <div class="ending-grid-lines"></div>
+
+    <div class="ending-orbit"></div>
+    <div class="ending-orbit two"></div>
+
+    <div class="ending-rings">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="ending-sparkles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="ending-content">
+      <div class="ending-label">Creative Portfolio</div>
+      <h2 class="ending-headline">
+        <span class="accent">Thanks</span>
+        for Watching
+      </h2>
+      <div class="ending-shine"></div>
+      <p class="ending-subtext">
+        Your attention means a lot. Keep exploring creative visuals, brand stories,
+        posters, campaigns, and premium design ideas.
+      </p>
+    </div>
+
+    <div class="ending-marquee">
+      <div class="ending-marquee-track">
+        <span class="marquee-thanks">Thanks for Watching</span>
+        <span class="marquee-portfolio">Portfolio 2026</span>
+        <span class="marquee-thanks">Thanks for Watching</span>
+        <span class="marquee-portfolio">Portfolio 2026</span>
+        <span class="marquee-thanks">Thanks for Watching</span>
+        <span class="marquee-portfolio">Portfolio 2026</span>
+        <span class="marquee-thanks">Thanks for Watching</span>
+        <span class="marquee-portfolio">Portfolio 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+  </div>
+</div>
+
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Zoom Image" loading="lazy" decoding="async">
+</div>
+
+<script>
+const zoomImages = document.querySelectorAll(".zoom-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+zoomImages.forEach((img) => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+  }
+});
+
+/* Clickable text navigation: clicked text goes to matching section */
+document.querySelectorAll(".animated-text-slot[href^='#']").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+
+    e.preventDefault();
+    scaleFullSite();
+
+    const top = target.getBoundingClientRect().top + window.pageYOffset - 30;
+    window.scrollTo({
+      top,
+      behavior: "smooth"
+    });
+  });
+});
+
+
+/* Auto scale full fixed desktop layout to every device */
+const DESIGN_WIDTH = 1450;
+const siteViewport = document.getElementById("site-scale-viewport");
+const siteShell = document.getElementById("site-scale-shell");
+
+function scaleFullSite() {
+  if (!siteViewport || !siteShell) return;
+
+  const deviceWidth = document.documentElement.clientWidth || window.innerWidth;
+  const scale = Math.min(1, deviceWidth / DESIGN_WIDTH);
+
+  siteShell.style.transform = `scale(${scale})`;
+  siteShell.style.width = `${DESIGN_WIDTH}px`;
+
+  const realHeight = siteShell.scrollHeight * scale;
+  siteViewport.style.height = `${realHeight}px`;
+}
+
+window.addEventListener("load", scaleFullSite);
+window.addEventListener("resize", scaleFullSite);
+window.addEventListener("orientationchange", () => setTimeout(scaleFullSite, 300));
+
+document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("load", scaleFullSite);
+});
+
+setTimeout(scaleFullSite, 300);
+setTimeout(scaleFullSite, 1000);
+setTimeout(scaleFullSite, 2000);
+
+
+// Final recalculation for perfect same-to-same height
+window.addEventListener("DOMContentLoaded", () => {
+  if (typeof scaleFullSite === "function") {
+    scaleFullSite();
+    setTimeout(scaleFullSite, 500);
+    setTimeout(scaleFullSite, 1500);
+    setTimeout(scaleFullSite, 3000);
+  }
+});
+
+
+
+/* Movie + Flyers heavy image lazy loader */
+(function () {
+  const lazyImages = document.querySelectorAll("#movie-artwork img[data-src], #flyers-design img[data-src]");
+  if (!lazyImages.length) return;
+
+  function loadImg(img) {
+    if (!img.dataset.src) return;
+    img.src = img.dataset.src;
+    img.removeAttribute("data-src");
+    img.addEventListener("load", function () {
+      if (typeof scaleFullSite === "function") scaleFullSite();
+    }, { once: true });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadImg(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "900px 0px" });
+
+    lazyImages.forEach((img) => observer.observe(img));
+  } else {
+    lazyImages.forEach(loadImg);
+  }
+})();
+
+</script>
+
+</body>
+</html>
